@@ -1,12 +1,13 @@
 import React, {useEffect} from 'react'
 import {View, Text, StyleSheet, ScrollView, Pressable} from 'react-native'
+import {useSelector} from 'react-redux'
 
 import CenterMessage from '../components/CenterMessage'
 
 import {colors} from '../theme'
 
 const Cities = (props) => {
-    const {cities} = props.route.params.screenProps
+    const cities = useSelector((state) => state.cities.cities)
     const navigate = (item) => {
         props.navigation.navigate('City', {city: item})
     }

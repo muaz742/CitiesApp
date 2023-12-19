@@ -2,18 +2,26 @@ import React from 'react'
 import {View, Text, StyleSheet, ScrollView, TextInput, TouchableOpacity} from 'react-native'
 import CenterMessage from '../components/CenterMessage'
 import {colors} from '../theme'
+import {useDispatch, useSelector} from "react-redux";
+import {addLocationToStore} from "../../app/citiesSlice";
 
 const City = (props) => {
-    console.log(props.route.params)
+    const dispatch = useDispatch()
+
+    const city = useSelector(
+        (state) => state.cities.cities.find(
+            (item) => item.id === props.route.params.city.id
+        )
+    );
+
     props.navigation.setOptions({
-        title: props.route.params.city.city,
+        title: city.city,
         headerTitleStyle: {
             color: 'white',
             fontSize: 20,
             fontWeight: '400'
         }
     })
-    const {city} = props.route.params
 
     const [name, setName] = React.useState('')
     const [info, setInfo] = React.useState('')
@@ -29,7 +37,7 @@ const City = (props) => {
             name: name,
             info: info
         }
-        props.route.params.screenProps.addLocation(location, city)
+        dispatch(addLocationToStore({location: location, city: city}))
         setName('')
         setInfo('')
     }

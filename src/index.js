@@ -15,8 +15,8 @@ const Stacks = (props) => {
     };
     return (
         <Stack.Navigator screenOptions={options}>
-            <Stack.Screen name={"Cities"} component={Cities} initialParams={props.route.params}/>
-            <Stack.Screen name="City" component={City} initialParams={props.route.params}/>
+            <Stack.Screen name={"Cities"} component={Cities}/>
+            <Stack.Screen name="City" component={City}/>
             <Stack.Screen name="AddCity" component={AddCity}/>
         </Stack.Navigator>
     );
@@ -32,8 +32,8 @@ const Tabs = (props) => {
     };
     return (
         <Tab.Navigator screenOptions={{headerShown: false}}>
-            <Tab.Screen name={"Citiess"} component={Stacks} initialParams={props}/>
-            <Tab.Screen name="AddCity" component={AddCity} initialParams={props}/>
+            <Tab.Screen name={"Citiess"} component={Stacks}/>
+            <Tab.Screen name="AddCity" component={AddCity}/>
         </Tab.Navigator>
     );
 }

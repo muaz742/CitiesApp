@@ -2,10 +2,13 @@ import React from 'react'
 import {View, Text, StyleSheet, TextInput, TouchableOpacity} from 'react-native'
 import uuid from 'react-native-uuid';
 import {colors} from '../theme'
+import {useDispatch} from "react-redux";
+import {addCityToStore} from "../../app/citiesSlice";
 
 const AddCity = (props) => {
     const [city, setCity] = React.useState('')
     const [country, setCountry] = React.useState('')
+    const dispatch = useDispatch();
 
     const onChangeText = (key, value) => {
         if (key === 'city') setCity(value)
@@ -20,7 +23,8 @@ const AddCity = (props) => {
             id: uuid.v4(),
             locations: []
         }
-        props.route.params.screenProps.addCity(newCity)
+        dispatch(addCityToStore(newCity));
+        console.log(newCity)
         setCity('')
         setCountry('')
         props.navigation.navigate('Cities')
