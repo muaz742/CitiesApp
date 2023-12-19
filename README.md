@@ -1,4 +1,4 @@
-# CitiesApp
+# CitiesApp - Redux Branch
 
 A React Native app that displays a list of cities.
 
@@ -6,6 +6,7 @@ A React Native app that displays a list of cities.
 
 * Uses stateless functional components
 * Uses the version 6.x of React Navigation
+* Uses Redux for state management
 
 **Note:**
 
@@ -13,7 +14,8 @@ This application was created for the Mobile Application Development course offer
 
 **Task:** Transform the [Chapter6 (React Native in Action)](https://github.com/dabit3/react-native-in-action/tree/chapter6) example to stateless functional components with the latest version of React Navigation.
 
-**Solution:** Try this study on Snack: [CityApp](https://snack.expo.dev/@muaz742/citiesapp)
+**Solution:** Try this study on Snack: [CityApp](https://snack.expo.dev/@muaz742/citiesapp) and
+[CityAppWithRedux](https://snack.expo.dev/@muaz742/citiesappwithredux)
 
 ## Installation
 
@@ -40,6 +42,7 @@ npm install react-native-screens react-native-safe-area-context
 npm install @react-navigation/native-stack
 npm install @react-navigation/bottom-tabs
 npm install @react-navigation/native
+npm install @reduxjs/toolkit react-redux
 ```
 
 ## Contributing
